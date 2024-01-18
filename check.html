@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        #searchButton {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #searchButton:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton" onclick="search()">Search</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function search() {
+            // Replace this with your actual search functionality
+            var searchTerm = document.getElementById('searchInput').value;
+            var resultContainer = document.getElementById('result');
+            
+            // Simulating search results (replace with actual data)
+            var searchResults = [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            ];
+
+            // Clear previous results
+            resultContainer.innerHTML = '';
+
+            // Display search results
+            for (var i = 0; i < searchResults.length; i++) {
+                var post = document.createElement('div');
+                post.className = 'blog-post';
+                post.textContent = searchResults[i];
+                resultContainer.appendChild(post);
+            }
+        }
+    </script>
+
+</body>
+</html>
